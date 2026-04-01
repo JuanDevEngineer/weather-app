@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@layer components {
+  .glassmorphism {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+}
+
+@layer utilities {
+  .shadow-glass {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .text-shadow {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+}
+
+body {
+  transition: background 1.2s ease;
+}
+
+
+/* 
+
+  modified extend 
+
+  extend: {
+    colors: {
+        "primary": "#137fec",
+        "background-light": "#f6f7f8",
+        "background-dark": "#101922",
+    },
+    fontFamily: {
+        "display": ["Inter", "sans-serif"]
+    },
+    borderRadius: {
+        "DEFAULT": "0.5rem",
+        "lg": "1rem",
+        "xl": "1.5rem",
+        "full": "9999px",
+    },
+    boxShadow: {
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.15)',
+    },
+    backdropBlur: {
+        'xl': '20px',
+    }
+  },
+
+*/
+
+/* .glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
