@@ -30,9 +30,15 @@ export function getDayName(timestamp: number): string {
   const today = new Date();
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
-  if (date.toDateString() === today.toDateString()) return 'Hoy';
-  if (date.toDateString() === tomorrow.toDateString()) return 'Mañana';
-  return date.toLocaleDateString('es', { weekday: 'short' })
+
+  const fmt = (d: Date) =>
+    `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+
+  if (fmt(date) === fmt(today)) return 'Hoy';
+  if (fmt(date) === fmt(tomorrow)) return 'Mañana';
+
+  return date
+    .toLocaleDateString('es', { weekday: 'short' })
     .replace('.', '')
     .replace(/^\w/, (c) => c.toUpperCase());
 }
