@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import { createContext, useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
 import type { CurrentWeather, ForecastItem, WeatherContextType } from '../types/weather';
 import { getWeatherByCity } from '../services/weatherService';
 
@@ -30,8 +30,13 @@ export function WeatherProvider({ children }: { children: ReactNode }) {
     searchCity(DEFAULT_CITY);
   }, [searchCity]);
 
+  const contextValue = useMemo(
+    () => ({ weather, forecast, loading, error, searchCity }),
+    [weather, forecast, loading, error, searchCity]
+  );
+
   return (
-    <WeatherContext.Provider value={{ weather, forecast, loading, error, searchCity }}>
+    <WeatherContext.Provider value={contextValue}>
       {children}
     </WeatherContext.Provider>
   );

@@ -1,16 +1,17 @@
+const ICON_MAP: Record<string, string> = {
+  '01d': 'sunny',        '01n': 'clear_night',
+  '02d': 'partly_cloudy_day', '02n': 'partly_cloudy_night',
+  '03d': 'cloud',        '03n': 'cloud',
+  '04d': 'cloudy',       '04n': 'cloudy',
+  '09d': 'rainy',        '09n': 'rainy',
+  '10d': 'rainy',        '10n': 'rainy',
+  '11d': 'thunderstorm', '11n': 'thunderstorm',
+  '13d': 'ac_unit',      '13n': 'ac_unit',
+  '50d': 'foggy',        '50n': 'foggy',
+};
+
 export function getWeatherIcon(icon: string): string {
-  const iconMap: Record<string, string> = {
-    '01d': 'sunny',        '01n': 'clear_night',
-    '02d': 'partly_cloudy_day', '02n': 'partly_cloudy_night',
-    '03d': 'cloud',        '03n': 'cloud',
-    '04d': 'cloudy',       '04n': 'cloudy',
-    '09d': 'rainy',        '09n': 'rainy',
-    '10d': 'rainy',        '10n': 'rainy',
-    '11d': 'thunderstorm', '11n': 'thunderstorm',
-    '13d': 'ac_unit',      '13n': 'ac_unit',
-    '50d': 'foggy',        '50n': 'foggy',
-  };
-  return iconMap[icon] ?? 'partly_cloudy_day';
+  return ICON_MAP[icon] ?? 'partly_cloudy_day';
 }
 
 export function getWindDirection(deg: number): string {

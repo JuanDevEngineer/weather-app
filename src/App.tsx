@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { WeatherProvider } from "./context/WeatherContext";
 import { useWeather } from "./hooks/useWeather";
 import { getWeatherGradient } from "./utils/weatherUtils";
@@ -10,9 +11,12 @@ import { AdditionalInfo } from "./components/AdditionalInfo";
 function WeatherApp() {
   const { weather, loading, error } = useWeather();
 
-  const gradient = weather
-    ? getWeatherGradient(weather.conditionId, weather.icon)
-    : "linear-gradient(135deg, #1e3c72 0%, #2a5298 40%, #4a90d9 100%)";
+  const gradient = useMemo(
+    () => weather
+      ? getWeatherGradient(weather.conditionId, weather.icon)
+      : "linear-gradient(135deg, #1e3c72 0%, #2a5298 40%, #4a90d9 100%)",
+    [weather]
+  );
 
   return (
     <div
@@ -23,9 +27,9 @@ function WeatherApp() {
         <Header />
 
         {loading && (
-          <div className="flex h-96 items-center justify-center">
+          <div role="status" aria-live="polite" className="flex h-96 items-center justify-center">
             <div className="flex flex-col items-center gap-4 text-white">
-              <span className="material-symbols-outlined animate-spin text-5xl">
+              <span className="material-symbols-outlined animate-spin text-5xl" aria-hidden="true">
                 sync
               </span>
               <p className="text-lg">Cargando datos del clima...</p>
@@ -34,9 +38,9 @@ function WeatherApp() {
         )}
 
         {!loading && error && (
-          <div className="flex h-96 items-center justify-center">
+          <div role="alert" className="flex h-96 items-center justify-center">
             <div className="glassmorphism flex flex-col items-center gap-4 rounded-xl p-8 text-white shadow-glass">
-              <span className="material-symbols-outlined text-5xl text-red-300">
+              <span className="material-symbols-outlined text-5xl text-red-300" aria-hidden="true">
                 error
               </span>
               <p className="text-lg text-center max-w-sm">{error}</p>
