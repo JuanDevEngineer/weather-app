@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Sun -->
+  <circle cx="26" cy="24" r="10" fill="#FCD34D"/>
+  <!-- Sun rays -->
+  <line x1="26" y1="8" x2="26" y2="4" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="26" y1="44" x2="26" y2="40" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="10" y1="24" x2="6" y2="24" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="46" y1="24" x2="42" y2="24" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="14.69" y1="12.69" x2="11.86" y2="9.86" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40.14" y1="38.14" x2="37.31" y2="35.31" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="37.31" y1="12.69" x2="40.14" y2="9.86" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="11.86" y1="38.14" x2="14.69" y2="35.31" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+  <!-- Cloud -->
+  <rect x="14" y="34" width="36" height="16" rx="8" fill="#93C5FD"/>
+  <circle cx="22" cy="34" r="9" fill="#93C5FD"/>
+  <circle cx="36" cy="30" r="12" fill="#93C5FD"/>
+  <circle cx="46" cy="36" r="8" fill="#93C5FD"/>
+  <!-- Cloud white overlay to clean up -->
+  <rect x="14" y="36" width="36" height="14" rx="0" fill="#93C5FD"/>
+</svg>

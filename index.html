@@ -2,12 +2,62 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Viewport & Theme -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#137fec" />
+
+    <!-- Primary SEO -->
+    <title>Clima en Tiempo Real | Consulta el Tiempo de tu Ciudad</title>
+    <meta name="description" content="Consulta el clima en tiempo real de cualquier ciudad del mundo. Temperatura actual, pronóstico de 5 días, humedad, viento, índice UV y más. Rápido y preciso." />
+    <meta name="keywords" content="clima, tiempo, pronóstico del tiempo, temperatura, meteorología, lluvia, viento, humedad, clima en tiempo real, previsión meteorológica" />
+    <meta name="author" content="JuanDevEngineer" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (Social Sharing) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Clima en Tiempo Real | Consulta el Tiempo de tu Ciudad" />
+    <meta property="og:description" content="Consulta el clima en tiempo real de cualquier ciudad del mundo. Temperatura actual, pronóstico de 5 días, humedad, viento y más." />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Weather App" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Clima en Tiempo Real | Consulta el Tiempo de tu Ciudad" />
+    <meta name="twitter:description" content="Consulta el clima en tiempo real de cualquier ciudad. Pronóstico de 5 días, humedad, viento, índice UV y más." />
+
+    <!-- Preconnect for font performance (Core Web Vitals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <title>Weather-app</title>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Weather App",
+      "description": "Consulta el clima en tiempo real de cualquier ciudad del mundo. Temperatura actual, pronóstico de 5 días, humedad, viento, índice UV y más.",
+      "applicationCategory": "WeatherApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "es",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
   </head>
   <body class="mx-auto h-full w-full bg-linear-to-bl from-gray-400 to-blue-500/90 backdrop-blur-3xl">
     <div id="root"></div>
